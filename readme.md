@@ -6,7 +6,7 @@ A really simple and elegant looking birthday counter
 
 #### demo (youtube)
 
-[![Birthday Countdown + Sweet Birthday Greeting with HTML, CSS & JS](http://img.youtube.com/vi/B-f1bxYaayc/0.jpg)](http://www.youtube.com/watch?v=B-f1bxYaayc "Birthday Countdown + Sweet Birthday Greeting with HTML, CSS & JS")
+[![Birthday Countdown + Sweet Birthday Greeting with HTML, CSS & JS](http://img.youtube.com/vi/B-f1bxYaayc/0.jpg)](https://youtu.be/B-f1bxYaayc?t=53 "Birthday Countdown + Sweet Birthday Greeting with HTML, CSS & JS")
 
 &nbsp;
 
