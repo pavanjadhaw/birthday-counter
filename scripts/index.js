@@ -4,8 +4,8 @@ const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
 
 const config = {
-  birthdate: 'Jan 29, 2020',
-  name: 'Darlene'
+  birthdate: 'Dec 5, 2023',
+  name: 'Tiara Desmitha Oliviany'
 };
 
 function hideEverything() {
@@ -17,7 +17,9 @@ function hideEverything() {
 
 hideEverything();
 
-const confettiSettings = { target: 'confetti' };
+const confettiSettings = {
+  target: 'confetti'
+};
 const confetti = new window.ConfettiGenerator(confettiSettings);
 confetti.render();
 
@@ -27,7 +29,7 @@ const second = 1000,
   day = hour * 24;
 
 let countDown = new Date(`${config.birthdate} 00:00:00`).getTime();
-x = setInterval(function() {
+x = setInterval(function () {
   let now = new Date().getTime(),
     distance = countDown - now;
 
@@ -89,8 +91,7 @@ x = setInterval(function() {
       balloonAddedRadian: -1
     },
     calc = {
-      totalWidth:
-        opts.charSpacing *
+      totalWidth: opts.charSpacing *
         Math.max(opts.strings[0].length, opts.strings[1].length)
     },
     Tau = Math.PI * 2,
@@ -118,7 +119,7 @@ x = setInterval(function() {
 
     this.reset();
   }
-  Letter.prototype.reset = function() {
+  Letter.prototype.reset = function () {
     this.phase = 'firework';
     this.tick = 0;
     this.spawned = false;
@@ -129,9 +130,11 @@ x = setInterval(function() {
       0;
     this.lineWidth =
       opts.fireworkBaseLineWidth + opts.fireworkAddedLineWidth * Math.random();
-    this.prevPoints = [[0, hh, 0]];
+    this.prevPoints = [
+      [0, hh, 0]
+    ];
   };
-  Letter.prototype.step = function() {
+  Letter.prototype.step = function () {
     if (this.phase === 'firework') {
       if (!this.spawned) {
         ++this.tick;
@@ -192,9 +195,9 @@ x = setInterval(function() {
           this.shards = [];
 
           let shardCount =
-              (opts.fireworkBaseShards +
-                opts.fireworkAddedShards * Math.random()) |
-              0,
+            (opts.fireworkBaseShards +
+              opts.fireworkAddedShards * Math.random()) |
+            0,
             angle = Tau / shardCount,
             cos = Math.cos(angle),
             sin = Math.sin(angle),
@@ -276,7 +279,7 @@ x = setInterval(function() {
           (opts.balloonBaseSize + opts.balloonAddedSize * Math.random()) | 0;
 
         let rad =
-            opts.balloonBaseRadian + opts.balloonAddedRadian * Math.random(),
+          opts.balloonBaseRadian + opts.balloonAddedRadian * Math.random(),
           vel = opts.balloonBaseVel + opts.balloonAddedVel * Math.random();
 
         this.vx = Math.cos(rad) * vel;
@@ -356,7 +359,9 @@ x = setInterval(function() {
     this.x = x;
     this.y = y;
 
-    this.prevPoints = [[x, y]];
+    this.prevPoints = [
+      [x, y]
+    ];
     this.color = color;
 
     this.alive = true;
@@ -364,7 +369,7 @@ x = setInterval(function() {
     this.size =
       opts.fireworkShardBaseSize + opts.fireworkShardAddedSize * Math.random();
   }
-  Shard.prototype.step = function() {
+  Shard.prototype.step = function () {
     this.x += this.vx;
     this.y += this.vy += opts.gravity;
 
@@ -419,7 +424,8 @@ x = setInterval(function() {
 
     ctx.translate(-hw, -hh);
 
-    if (done) for (let l = 0; l < letters.length; ++l) letters[l].reset();
+    if (done)
+      for (let l = 0; l < letters.length; ++l) letters[l].reset();
   }
 
   for (let i = 0; i < opts.strings.length; ++i) {
@@ -428,17 +434,17 @@ x = setInterval(function() {
         new Letter(
           opts.strings[i][j],
           j * opts.charSpacing +
-            opts.charSpacing / 2 -
-            (opts.strings[i].length * opts.charSize) / 2,
+          opts.charSpacing / 2 -
+          (opts.strings[i].length * opts.charSize) / 2,
           i * opts.lineHeight +
-            opts.lineHeight / 2 -
-            (opts.strings.length * opts.lineHeight) / 2
+          opts.lineHeight / 2 -
+          (opts.strings.length * opts.lineHeight) / 2
         )
       );
     }
   }
 
-  window.addEventListener('resize', function() {
+  window.addEventListener('resize', function () {
     w = c.width = window.innerWidth;
     h = c.height = window.innerHeight;
 
@@ -476,8 +482,7 @@ x = setInterval(function() {
         box.removeEventListener('click', openBox, false);
       }
       stepClass(step);
-      if (step === 3) {
-      }
+      if (step === 3) {}
       if (step === 4) {
         return;
       }
